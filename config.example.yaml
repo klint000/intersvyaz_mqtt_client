@@ -1,0 +1,18 @@
+intersvyaz:
+  phone: "+79001234567"      # телефон для входа по SMS
+  relay_id: null             # оставьте null — при первом запуске в лог/консоль
+                              # будет выведен список доступных RELAY_ID,
+                              # выберите нужный и впишите сюда
+  token_file: "intersvyaz_token.json"   # куда сохранять токен между запусками
+
+mqtt:
+  host: "192.168.1.10"
+  port: 1883
+  username: "mqtt_user"      # можно не указывать, если брокер без авторизации
+  password: "mqtt_pass"
+  base_topic: "intersvyaz/domofon"
+  # Топики (формируются автоматически из base_topic):
+  #   intersvyaz/domofon/open/set   -> опубликуйте сюда любое сообщение, чтобы открыть дверь
+  #   intersvyaz/domofon/state      -> online/offline (retained)
+  #   intersvyaz/domofon/result     -> OK или ERROR: ... после попытки открытия
+  #   intersvyaz/domofon/relays     -> список реле, если relay_id не задан
