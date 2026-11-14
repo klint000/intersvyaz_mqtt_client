@@ -172,7 +172,7 @@ async def resolve_relay_id(
 
     print("relay_id не указан в конфигурации. Доступные реле:")
     for r in relays:
-        print(f"  RELAY_ID={r.get('RELAY_ID')}  NAME={r.get('NAME', '?')}")
+        print(f"  RELAY_ID={r.get('RELAY_ID')}  NAME={r.get('RELAY_TYPE', '?')}")
     print(
         "Укажите нужный RELAY_ID в поле intersvyaz.relay_id конфигурационного "
         "файла и перезапустите клиент."
