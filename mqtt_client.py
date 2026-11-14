@@ -221,7 +221,6 @@ async def run(config_path: str) -> None:
                     "uuid": camera.get("UUID"),
                     "id": camera.get("ID"),
                     "name": camera.get("NAME"),
-                    "stream_exists": camera.get("STREAM_EXISTS"),
                     "snapshot": {
                         "main": snapshot_live.get("MAIN"),
                         "LOSSY": snapshot_live.get("LOSSY"),
