@@ -75,8 +75,8 @@ class Config:
         return f"{self.base_topic}/result"
 
     @property
-    def topic_camera(self) -> str:
-        return f"{self.base_topic}/camera"
+    def topic_cameras(self) -> str:
+        return f"{self.base_topic}/cameras"
 
 
 # --------------------------------------------------------------------- #
@@ -254,7 +254,7 @@ async def run(config_path: str) -> None:
                 async with aiomqtt.Client(**mqtt_kwargs) as mqtt_client:
                     await mqtt_client.publish(config.topic_state, "online", retain=True)
                     await mqtt_client.publish(
-                        config.topic_camera,
+                        config.topic_cameras,
                         json.dumps(camera_state, ensure_ascii=False),
                     )
                     await mqtt_client.subscribe(config.topic_open)
